@@ -48,5 +48,6 @@ export default {
     <div id="maps" :is="maps">
 
     </div>
+    <p>salutareeee</p>
   </main>
 </template>
