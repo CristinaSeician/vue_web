@@ -1,63 +1,26 @@
-<script setup>
-import afiseaza from "./components/afiseazaTari.vue";
-</script>
-
-<template>
-  <header>
-   
-  </header>
-
-  <main>
-    <afiseaza/>
-  </main>
-</template>
-
-<style scoped>
-
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
-
-
-<!-- <script setup>
-import Api from "./components/icons/Api.vue";
-import Home from "./components/icons/Home.vue";
-import Admin from "./components/icons/Admin.vue";
-import AddExericesVue from "./components/icons/AddExerices.vue";
-import ExercicesPageVue from "./components/icons/ExercicesPage.vue";
-import { useTheme } from "vuetify";
-</script>
 <script>
+import Home from "./Home.vue";
+import Search from "./components/SearchCountry.vue"
+//import Deck from "./Search.vue";
+import NotFound from "./404.vue";
+import { useTheme } from "vuetify";
+
 const routes = {
-
-
   "/": Home,
-  "/ExercicesPageVue":ExercicesPageVue,
-  "/Api":Api,
-  "/Admin":Admin,
-  "/AddExericesVue":AddExericesVue
-
+  "/search": Search,
 };
+
 export default {
   setup() {
     const theme = useTheme();
 
+    return {
+      theme,
+      toggleTheme: () =>
+        (theme.global.name.value = theme.global.current.value.dark
+          ? "light"
+          : "dark"),
+    };
   },
   data() {
     return {
@@ -66,7 +29,7 @@ export default {
   },
   computed: {
     currentView() {
-      return routes[this.currentPath.slice(1) || "/"];
+      return routes[this.currentPath.slice(1) || "/"] || NotFound;
     },
   },
   mounted() {
@@ -74,32 +37,27 @@ export default {
       this.currentPath = window.location.hash;
     });
   },
-  methods: {
-
-  },
+  methods: {},
 };
 </script>
-<template>
 
+<template>
   <main>
     <v-app>
-      <v-app-bar title="Code Remote">
-        <v-btn href="#/">Home</v-btn>
-        <v-btn href="#/ExercicesPageVue">Challange</v-btn>
-        <v-btn href="#/Api">Play</v-btn>
+      <v-app-bar id="app-bar" title="Countries of the World">
+        <v-btn href="#/" @click=href append-icon="mdi-home">Home</v-btn>
+        <v-btn href="#/search" @click=href append-icon="mdi-magnify">Search</v-btn>
+        <v-btn @click="toggleTheme" icon="mdi-animation"></v-btn>
       </v-app-bar>
       <v-main>
         <component :is="currentView" />
       </v-main>
-<v-footer>
-  <v-btn href="#/Admin">Admin</v-btn>
-</v-footer>
-
     </v-app>
   </main>
 </template>
 
 <style scoped>
-
+header {
+  line-height: 1.5;
+}
 </style>
--->
