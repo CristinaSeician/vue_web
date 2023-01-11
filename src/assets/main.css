@@ -1,23 +1,23 @@
 @import "./base.css";
 
-
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
 }
- 
+
 body {
   background-color: rgb(204, 204, 205);
 }
 
 /* ---- home ---- */
-#quote{
+#quote {
   text-align: center;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
   font-size: 27px;
 }
+
 .cer {
   background-image: url("./sky2.jpg");
   background-color: #cccccc;
@@ -27,56 +27,82 @@ body {
   background-size: cover;
   position: relative;
 }
+
 #earth {
-    margin-left: 450px;
-    width: 300px;
-    height: 300px;
-    background: url(https://web.archive.org/web/20150807125159if_/http://www.noirextreme.com/digital/Earth-Color4096.jpg);
-    border-radius: 50%;
-    background-size: 610px;
-    box-shadow: inset 8px 36px 80px 36px rgb(0, 0, 0),
+  margin-left: 450px;
+  width: 300px;
+  height: 300px;
+  background: url(https://web.archive.org/web/20150807125159if_/http://www.noirextreme.com/digital/Earth-Color4096.jpg);
+  border-radius: 50%;
+  background-size: 610px;
+  box-shadow: inset 8px 36px 80px 36px rgb(0, 0, 0),
     inset -6px 0 12px 4px rgba(255, 255, 255, 0.3);
-    animation-name: rotate;
-    animation-duration: 12s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    -webkit-animation-name: rotate;
-    -webkit-animation-duration: 12s;
-    -webkit-animation-iteration-count: infinite;
-    -webkit-animation-timing-function: linear;
+  animation-name: rotate;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 12s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
 }
 
 @keyframes rotate {
-    from { background-position: 0px 0px; }
-    to { background-position: 500px 0px; }
-}
-@-webkit-keyframes rotate {
-    from { background-position: 0px 0px; }
-    to { background-position: 500px 0px; }
+  from {
+    background-position: 0px 0px;
+  }
+
+  to {
+    background-position: 500px 0px;
+  }
 }
 
-#app-bar{
+@-webkit-keyframes rotate {
+  from {
+    background-position: 0px 0px;
+  }
+
+  to {
+    background-position: 500px 0px;
+  }
+}
+
+#app-bar {
   padding-left: 85px;
-  padding-right: 35px;
+  padding-right: 80px;
+}
+
+.text{
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 22px;
+}
+
+ul.lista {
+  list-style-type: circle;
+  padding-left: 150px;
+  padding-right: 30px;
+  font-size: 22px;
 }
 
 /* ---- search country ---- */
-#tara{
+#tara {
   width: 220px;
   height: 37px;
   margin-left: 60px;
   padding-left: 10px;
   margin-top: 15px;
   background-color: rgb(227, 227, 227);
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   display: inline-block;
   border: 1px solid rgb(121, 121, 121);
   border-radius: 10px;
   box-sizing: border-box;
 }
-.earth-blue{
+
+.earth-blue {
   background-image: url("./banner.jpg");
-  background-color:#cccccc;
+  background-color: #cccccc;
   height: 250px;
   background-position: center;
   background-repeat: no-repeat;
@@ -84,27 +110,99 @@ body {
   position: relative;
   max-width: 100%;
 }
-#search-country{
+
+#search-country {
   padding-left: 60px;
   padding-top: 170px;
   font-size: 45px;
   display: inline-block;
   color: rgb(204, 204, 205);
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 }
-#btn-search{
+
+#btn-search {
   margin-left: 15px;
   color: black;
 }
-.result-countries{
+
+.result-countries {
   margin-left: 60px;
   padding-top: 20px;
   font-size: 20px;
   line-height: 40px;
 }
-#flags{
+
+#flags {
   height: 150px;
 }
-#coatOfArms{
+
+#coatOfArms {
   height: 250px;
+}
+
+/* -------- about -------*/
+
+.text1{
+  padding-left: 70px;
+  padding-right: 30px;
+  font-size: 20px;
+}
+.sss {
+  content: "\2BCC";
+  font-size: 25px;
+}
+
+.cod_api1 {
+  border-radius: 15px;
+  padding: 5px;
+  width: 600px;
+  margin-left: 580px;
+  margin-top: -700px;
+}
+#cod1{
+  margin-left: 40px;
+  font-size: 20px;
+  padding-right: 680px;
+  margin-top: 30px;
+}
+.sageata1{
+  content: "\2937";
+  font-size: 100px;
+  margin-left: 250px;
+}
+
+.cod_api2 {
+  border-radius: 15px;
+  margin-left: 40px;
+  width: 500px;
+  /*margin-top: -255px;*/ 
+}
+#cod2{
+  margin-left: 565px;
+  font-size: 20px;
+  margin-top: -340px;
+  padding-right: 30px;
+}
+.sageata2 {
+  content: "\2936";
+  font-size: 100px;
+  margin-left: 250px;
+}
+
+.cod_api3 {
+  border-radius: 15px;
+  margin-left: 40px;
+  width: 450px;
+  margin-top: -300px; 
+}
+#cod3{
+  margin-left: 565px;
+  font-size: 20px;
+  margin-top: 40px;
+  padding-right: 30px;
+}
+.sageata3 {
+  content: "\2936";
+  font-size: 100px;
+  margin-left: 250px;
 }

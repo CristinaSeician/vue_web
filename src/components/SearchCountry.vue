@@ -6,24 +6,36 @@ export default {
             showCapital:null,
             showContinent:null,
             showLanguage:null,
+            showLatLong:null,
             showBorders:null, 
-            //showBorders:[],
             showCurrency:null,
             showCar:null,
             showPopulation:null,
         };
     },
+    
     methods: {
         async tari(){
             var getTari=document.getElementById("tara").value;
+            
             await fetch(`https://restcountries.com/v3.1/name/${getTari}`)
             .then(response=>response.json())
             .then(result=>{console.log(result);
-              this.showCountry=result[0].name.common;
+                this.showCountry=result[0].name.common;
                 this.showCapital=result[0].capital[0];
                 this.showContinent=result[0].continents[0];
                 this.showLanguage=result[0].languages;
-                this.showBorders=result[0].borders;
+
+                /*
+                const lang = result[0].languages;
+                for (let key in lang) {
+                  let value;
+                  value=lang[key];
+                  this.showLanguage = this.showLanguage +  " " + value.toString();
+                };
+                */
+                this.showLatLong=result[0].latlng.toString();
+                this.showBorders=result[0].borders.toString();
                 this.showPopulation=result[0].population;
                 this.showCurrency=result[0].currencies;
                 this.showCar=result[0].car.signs[0];
@@ -52,6 +64,7 @@ export default {
         <p>Capital: {{this.showCapital}}</p>
         <p>Continent: {{this.showContinent}}</p>
         <p>Language: {{this.showLanguage}}</p>
+        <p>Latitude and Longitude: {{this.showLatLong}}</p>
         <p>Borders: {{this.showBorders}}</p>
         <p >Population: {{this.showPopulation}}</p>
         <p>Currency: {{this.showCurrency}}</p>
@@ -59,10 +72,6 @@ export default {
         <p >Flag:&nbsp;<img src="" alt="" id="flags"></p> <br>
         <p>Coat of Arms:&nbsp;<img src="" alt="" id="coatOfArms"></p>
       </div>
-
-
-    
-      
 
       <div>&nbsp;</div>
       <div>&nbsp;</div>
